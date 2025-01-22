@@ -1,55 +1,32 @@
 ﻿using System;
 
-class MainClass
+namespace FirstApp
 {
-	public static void Main(string[] args)
-	{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0;
 
-		int k = 0;
+            while (true)
+            {
+                Console.WriteLine("Введите число");
+                var number = Convert.ToInt32(Console.ReadLine());
 
-		while (true)
-		{
-			Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-			Console.WriteLine(k);
+                if (number < 0)
+                {
+                    continue;
+                }
+                else if (number == 0)
+                {
+                    break;
+                }
 
+                // number > 0
+                sum += number;
+            }
 
-			var text = Console.ReadLine();
-			switch (text)
-			{
-				case "red":
-					Console.BackgroundColor = ConsoleColor.Red;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is red!");
-					break;
-
-				case "green":
-					Console.BackgroundColor = ConsoleColor.Green;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is green!");
-					break;
-
-				case "cyan":
-					Console.BackgroundColor = ConsoleColor.Cyan;
-					Console.ForegroundColor = ConsoleColor.Black;
-
-					Console.WriteLine("Your color is cyan!");
-					break;
-				default:
-					continue;
-			}
-
-			if (text == "stop")
-			{
-				Console.WriteLine("Цикл остановлен");
-				break;
-			}
-
-
-			k++;
-		}
-		Console.ReadKey();
-
-	}
+            Console.WriteLine("Итоговая сумма: {0}", sum);
+        }
+    }
 }
