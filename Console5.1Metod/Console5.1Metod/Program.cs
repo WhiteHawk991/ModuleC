@@ -3,12 +3,12 @@
 class MainClass
 {
 
-    static void ShowColor()
+    static string ShowColor()
     {
         Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
         var color = Console.ReadLine();
-
         switch (color)
+
         {
             case "red":
                 Console.BackgroundColor = ConsoleColor.Red;
@@ -35,7 +35,9 @@ class MainClass
 
                 Console.WriteLine("Your color is yellow!");
                 break;
+                
         }
+        return color;
     }
 
     public static void Main(string[] args)
@@ -55,7 +57,8 @@ class MainClass
         Console.WriteLine("Ваш возраст: {0}", age);
 
         ShowColor();
-
+        Console.ReadKey();
 
     }
+
 }
