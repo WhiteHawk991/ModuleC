@@ -35,30 +35,48 @@ class MainClass
 
                 Console.WriteLine("Your color is yellow!");
                 break;
-                
+
         }
         return color;
     }
 
+    static int[] GetArrayFromConsole()
+    {
+        var result = new int[5];
+
+        for (int i = 0; i < result.Length; i++)
+        {
+            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+            result[i] = int.Parse(Console.ReadLine());
+        }
+
+        int temp = 0;
+        for (int i = 0; i < result.Length; i++)
+            for (int j = i + 1; j < result.Length; j++)
+                if (result[i] > result[j])
+                {
+
+                    temp = result[i];
+                    result[i] = result[j];
+                    result[j] = temp;
+                }
+
+        for (int i = 0; i < result.Length; i++)
+        {
+            Console.WriteLine(result[i]);
+        }
+
+        return result;
+    }
+
     public static void Main(string[] args)
     {
-
-        var (name, age) = ("Евгения", 27);
-
-        Console.WriteLine("Мое имя: {0}", name);
-        Console.WriteLine("Мой возраст: {0}", age);
-
-        Console.Write("Введите имя: ");
-        name = Console.ReadLine();
-        Console.Write("Введите возрас с цифрами:");
-        age = Convert.ToInt32(Console.ReadLine());
-
-        Console.WriteLine("Ваше имя: {0}", name);
-        Console.WriteLine("Ваш возраст: {0}", age);
-
-        ShowColor();
+        int[] array = GetArrayFromConsole();
+        foreach (var item in array)
+        {
+            Console.WriteLine(item);
+        }
         Console.ReadKey();
-
     }
 
 }
