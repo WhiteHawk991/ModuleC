@@ -46,7 +46,7 @@ class Program
         string[] colors = new string[count];
         for (int i = 0; i < count; i++)
         {
-            colors[i] = ReadStringValue($"Введите ваш любимый цвет №{i + 1}: ", true);
+            colors[i] = ReadStringValue($"Введите ваш любимый цвет № {i + 1}: ", true);
         }
         return colors;
     }
@@ -109,7 +109,7 @@ class Program
 
     static void DisplayUserData((string firstName, string lastName, int age, bool hasPet, int petCount, string[] petNames, int favoriteColorsCount, string[] favoriteColors) data)
     {
-        Console.WriteLine("\nДанные пользователя:");
+        Console.WriteLine("\nЧто я теперь знаю о Вас:");
         Console.WriteLine($"Имя: {data.firstName}");
         Console.WriteLine($"Фамилия: {data.lastName}");
         Console.WriteLine($"Возраст: {data.age}");
